@@ -1,7 +1,7 @@
 import jax.numpy as jnp
 
 from masks import causal_mask
-from memory_mosaics import feature_extractor, c_associative_memory, p_associative_memory
+from memory_mosaics import feature_extractor, c_associative_memory, p_associative_memory, model_apply
 
 print("===== Masks: =====")
 print(causal_mask(3))
@@ -36,5 +36,13 @@ vals = feature_extractor(x, W, lambs, shift=-1, normalize=False)
 print(keys)
 print(vals)
 
+# TODO: more detailed tests of the feature extractor
 
+print("===== contextual associative memory: =====")
+# TODO
 
+print("===== persistent associative memory: =====")
+# TODO
+
+print("===== model_apply ======")
+# TODO

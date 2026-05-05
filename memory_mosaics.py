@@ -89,7 +89,7 @@ def model_apply(config: Config, params: dot_dict, tokens: jax.Array) -> jax.Arra
         # The current obs. is compared to stored keys. 
         # What they call key is actually more like a query then. 
         q = feature_extractor(z, block.pmems.wk, block.pmems.lambda_coef)
-        z = associative_memory(q, block.pmems.k, block.pmems.v, block.pmems.beta)
+        z = p_associative_memory(q, block.pmems.k, block.pmems.v, block.pmems.beta)
         z = jnp.einsum("bskh,khd->bsd", z, block.pmems.w_out)
         x += z
 
